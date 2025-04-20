@@ -322,3 +322,4 @@ exports.validateProduct = async (req, res, next) => {
   }
   next();
 };
+
