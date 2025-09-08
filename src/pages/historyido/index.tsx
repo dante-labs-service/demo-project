@@ -82,7 +82,7 @@ const Content = () => {
                 <div className=" max-w-7xl mx-auto" >
                     <div className='flex justify-start flex-col mb-4'>
                         <div className='text-3xl mb-3'>
-                            Funded Projests
+                            Funded Projects
                         </div>
                         <div className='text-lg'>
                             We bring new technologies to our community.

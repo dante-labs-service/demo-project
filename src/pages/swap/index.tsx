@@ -33,7 +33,6 @@ import { evm_address_to_sub_address } from '../../utils/chain/address';
 // import { router } from 'next/client';
 import { useRouter } from 'next/router';
 import { cropData } from '../../utils/math';
-// import BigNumber from 'bignumber.js';
 // import { balances } from '@polkadot/types/interfaces/definitions';
 // import { nToBigInt } from '@polkadot/util';
 // const { stringToU8a } = require('@polkadot/util');
