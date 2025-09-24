@@ -1,9 +1,8 @@
 const express = require('express');
+const { validateBusinessInfo } = require('./middlewares/validator');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const fileUpload = require('express-fileupload');
-const { validateBusinessInfo } = require('./middlewares/validator');
 
 const app = express();
 
@@ -15,7 +14,6 @@ if (process.env.NODE_ENV !== 'production') {
 app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(fileUpload());
 
 const user = require('./routes/userRoute');
 const product = require('./routes/productRoute');
